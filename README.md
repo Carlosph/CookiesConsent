@@ -1,20 +1,12 @@
 # CookiesConsent for Android
 
 Android library to show a dialog informing of the use of cookies to the users on the EU.
+
 ![Screenshot of the dialog](screenshot.png)
 
 ## Setup
 
-Add the repository to the *gradle.build* of your project
-
-```groovy
-repositories {
-    maven {
-        url  "http://dl.bintray.com/carlosph/maven" 
-    }
-}
-```
-Add the dependency *gradle.build* of your module
+Just add the dependency to your *gradle.build*
 ```groovy
 compile 'com.github.carlosph:cookiesconsent:0.9'
 ```
