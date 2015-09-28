@@ -8,7 +8,7 @@ Android library to show a dialog informing of the use of cookies to the users on
 
 Just add the dependency to your *gradle.build*
 ```groovy
-compile 'com.github.carlosph:cookiesconsent:0.9'
+compile 'com.github.carlosph:cookiesconsent:0.9.1'
 ```
 
 ## Usage
@@ -21,6 +21,16 @@ As an example, adding this line to the **onCreate** method of your **MainActivit
 ```java
 new CookiesConsentDialog(this).setPolicyUrl("https://github.com/Carlosph/CookiesConsent").showIfApplies();
 ```
+
+## Languages
+Supported languages:
+* English
+* Spanish
+* French
+ 
+There are just a few strings to be translated, so if your language is not supported, please help us by sending the translation.
+
+You can send a pull request or just send me the strings, as you like. I will try to keep the library updated with the translations that I receive.
 
 ## Thanks
 
