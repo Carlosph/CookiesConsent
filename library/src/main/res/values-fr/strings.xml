@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Text translations by https://github.com/jameltheone
+  -->
+
+<resources>
+    <string name="dialog_title">Cette application utilise des cookies</string>
+
+    <string name="dialog_text">En continuant, vous donnez votre consentement quant à l\'utilisation des cookies en accord avec les termes définis dans notre %1$s.</string>
+    <string name="privacy_policy">politique de confidentialité</string>
+    <string name="linked_privacy_policy">&lt;a href=\'%1$s\'>politique de confidentialité&lt;/a></string>
+
+    <string name="exit_button_text">Quitter</string>
+    <string name="continue_button_text">Continuer</string>
+</resources>

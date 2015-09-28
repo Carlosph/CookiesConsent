@@ -5,7 +5,7 @@ apply plugin: 'maven-publish'
 ext {
     PUBLISH_GROUP_ID = 'com.github.carlosph'
     PUBLISH_ARTIFACT_ID =  'cookiesconsent'
-    PUBLISH_VERSION = '0.9'
+    PUBLISH_VERSION = '0.9.1'
 }
 
 android {
