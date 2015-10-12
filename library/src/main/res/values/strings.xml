@@ -18,7 +18,7 @@
 <resources>
     <string name="dialog_title">This app uses cookies</string>
 
-    <string name="dialog_text">By continuing, you consent to the use of cookies in accordance with the terms of our %1$s.</string>
+        <string name="dialog_text">Using it, you consent to the use of cookies in accordance with the terms of our %1$s.</string>
     <string name="privacy_policy">privacy policy</string>
     <string name="linked_privacy_policy">&lt;a href=\'%1$s\'>privacy policy&lt;/a></string>
 
