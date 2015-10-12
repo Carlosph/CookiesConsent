@@ -2,17 +2,15 @@
 
 Android library to inform of the use of cookies to EU users. The alert can be shown via dialog or an overlay view..
 
-**Dialog**
 ![Screenshot of the dialog](screenshot.png)
 
-**Overlay**
-![Screenshot of the overlay](screenshot_overlay.png)
+![Screenshot of the overlay](overlay_screenshot.png)
 
 ## Setup
 
 Just add the dependency to your *gradle.build*
 ```groovy
-compile 'com.github.carlosph:cookiesconsent:0.9.1'
+compile 'com.github.carlosph:cookiesconsent:0.9.2'
 ```
 
 ## Usage
@@ -22,12 +20,17 @@ Simply create a new ```CookiesConsetDialog``` or ```CookiesConsetOverlay``` and 
 To add a link to your privacy policy use the method ```setPolicyUrl(String policyUrl)```.
 
 You only need to add one line to the **onCreate** method of your **MainActivity** to show the dialog or overlay to EU users when they open the app for the first time.
+
 ```java
-new CookiesConsentDialog(this).setPolicyUrl("https://github.com/Carlosph/CookiesConsent").showIfApplies();
+new CookiesConsentDialog(this)
+    .setPolicyUrl("https://github.com/Carlosph/CookiesConsent")
+    .showIfApplies();
 ```
 
 ```java
-new CookiesConsentOverlay(this).setPolicyUrl("https://github.com/Carlosph/CookiesConsent").showIfApplies();
+new CookiesConsentOverlay(this)
+    .setPolicyUrl("https://github.com/Carlosph/CookiesConsent")
+    .showIfApplies();
 ```
 
 ## Languages
