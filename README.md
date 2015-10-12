@@ -1,8 +1,12 @@
 # CookiesConsent for Android
 
-Android library to show a dialog informing of the use of cookies to the users on the EU.
+Android library to inform of the use of cookies to EU users. The alert can be shown via dialog or an overlay view..
 
+**Dialog**
 ![Screenshot of the dialog](screenshot.png)
+
+**Overlay**
+![Screenshot of the overlay](screenshot_overlay.png)
 
 ## Setup
 
@@ -13,14 +17,28 @@ compile 'com.github.carlosph:cookiesconsent:0.9'
 
 ## Usage
 
-Simply create a new ```CookiesConsetDialog``` and call it's method ```showIfApplies()```.
+Simply create a new ```CookiesConsetDialog``` or ```CookiesConsetOverlay``` and call its method ```showIfApplies()```.
 
-To add a link to your privacy policy use the method ```setPolicyUrl(String policyUrl)```, and to set it as cancelable you can use ```setCancelable(boolean cancelable)```.
+To add a link to your privacy policy use the method ```setPolicyUrl(String policyUrl)```.
 
-As an example, adding this line to the **onCreate** method of your **MainActivity** will show the dialog the firs time an user on the EU opens the app.
+You only need to add one line to the **onCreate** method of your **MainActivity** to show the dialog or overlay to EU users when they open the app for the first time.
 ```java
 new CookiesConsentDialog(this).setPolicyUrl("https://github.com/Carlosph/CookiesConsent").showIfApplies();
 ```
+
+```java
+new CookiesConsentOverlay(this).setPolicyUrl("https://github.com/Carlosph/CookiesConsent").showIfApplies();
+```
+
+## Languages
+Supported languages:
+* English
+* Spanish
+* French
+ 
+There are just a few strings to be translated, so if your language is not supported, please help us by sending the translation.
+
+You can send a pull request or just send me the strings, as you like. I will try to keep the library updated with the translations that I receive.
 
 ## Thanks
 
