@@ -1,6 +1,6 @@
 # CookiesConsent for Android
 
-Android library to inform of the use of cookies to EU users. The alert can be shown via dialog or an overlay view..
+Android library to inform EU users of the use of cookies. The alert can be shown via dialog or an overlay view.
 
 ![Screenshot of the dialog](screenshot.png)
 
@@ -15,7 +15,7 @@ compile 'com.github.carlosph:cookiesconsent:0.9.2'
 
 ## Usage
 
-Simply create a new ```CookiesConsetDialog``` or ```CookiesConsetOverlay``` and call its method ```showIfApplies()```.
+Simply create a new ```CookiesConsetDialog``` or ```CookiesConsetOverlay``` and call the method ```showIfApplies```.
 
 To add a link to your privacy policy use the method ```setPolicyUrl(String policyUrl)```.
 
