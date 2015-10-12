@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="overlay_close_button_size">48dp</dimen>
+    <dimen name="overlay_text_padding">16dp</dimen>
+</resources>

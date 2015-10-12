@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/overlayLayout"
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_gravity="bottom"
+              android:background="@color/overlay_bg_color"
+              android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/overlay_text_padding">
+
+        <TextView
+            style="@style/Base.TextAppearance.AppCompat.Title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left|center"
+            android:text="@string/dialog_title"/>
+
+        <Button
+            android:id="@+id/overlayButton"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:layout_width="@dimen/overlay_close_button_size"
+            android:layout_height="@dimen/overlay_close_button_size"
+            android:text="x"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/overlayText"
+        style="@style/Base.TextAppearance.AppCompat.Small"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/overlay_text_padding"
+        android:layout_marginLeft="@dimen/overlay_text_padding"
+        android:layout_marginRight="@dimen/overlay_text_padding"
+        android:text="@string/dialog_text"/>
+</LinearLayout>

@@ -17,22 +17,15 @@
 package com.github.carlosph.cookiesconsent;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
-import android.text.Html;
-import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
 import android.widget.TextView;
 
-public class CookiesConsentDialog {
+public class CookiesConsentDialog extends CookiesConsentAlert {
 
-    private Activity activity;
     private boolean cancelable = false;
-    private String policyUrl;
 
     public CookiesConsentDialog(@NonNull final Activity activity) {
         this.activity = activity;
@@ -70,28 +63,5 @@ public class CookiesConsentDialog {
 
             ((TextView) dialog.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
         }
-    }
-
-    private boolean isDialogNeeded() {
-        SharedPreferences prefs = activity.getSharedPreferences("CookiesConsent", Context.MODE_PRIVATE);
-        return prefs.getBoolean("isFirstRun", true) && EuropeanUserChecker.isEU(activity);
-    }
-
-    private void policyAccepted() {
-        SharedPreferences prefs = activity.getSharedPreferences("CookiesConsent", Context.MODE_PRIVATE);
-        prefs.edit().putBoolean("isFirstRun", false).apply();
-    }
-
-    private Spanned getFormattedMessage() {
-        Spanned message;
-        Resources res = activity.getResources();
-        if (policyUrl != null) {
-            String policyLink = res.getString(R.string.linked_privacy_policy, policyUrl);
-            message = Html.fromHtml(res.getString(R.string.dialog_text, policyLink));
-        } else {
-            String policyText = res.getString(R.string.privacy_policy);
-            message = Html.fromHtml(res.getString(R.string.dialog_text, policyText));
-        }
-        return message;
     }
 }
