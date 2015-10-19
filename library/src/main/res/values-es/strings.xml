@@ -17,11 +17,9 @@
 
 <resources>
     <string name="dialog_title">Esta aplicación usa cookies</string>
-
     <string name="dialog_text">Al utilizarla, usted acepta el uso de cookies deacuerdo a los terminos de nuestra %1$s.</string>
     <string name="privacy_policy">política de provacidad</string>
     <string name="linked_privacy_policy">&lt;a href=\'%1$s\'>política de provacidad&lt;/a></string>
-
     <string name="exit_button_text">Salir</string>
     <string name="continue_button_text">Continuar</string>
 </resources>
