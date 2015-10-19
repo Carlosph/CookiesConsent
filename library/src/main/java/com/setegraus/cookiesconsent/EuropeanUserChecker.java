@@ -22,7 +22,7 @@
  * http://stackoverflow.com/users/5240952/ruyo
  */
 
-package com.github.carlosph.cookiesconsent;
+package com.setegraus.cookiesconsent;
 
 import android.app.Activity;
 import android.content.Context;
