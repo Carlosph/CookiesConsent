@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="exit_button_text">Sair</string>
+    <string name="continue_button_text">Continuar</string>
+    <string name="dialog_title">Este aplicativo usa cookies</string>
+    <string name="linked_privacy_policy">&lt;a href=\'%1$s\'>política de privacidade&lt;/a></string>
+    <string name="privacy_policy">política de privacidade</string>
+</resources>
