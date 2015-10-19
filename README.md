@@ -10,7 +10,7 @@ Android library to inform EU users of the use of cookies. The alert can be shown
 
 Just add the dependency to your *gradle.build*
 ```groovy
-compile 'com.github.carlosph:cookiesconsent:0.9.2'
+compile 'com.github.7graus:cookiesconsent:1.0.0'
 ```
 
 ## Usage

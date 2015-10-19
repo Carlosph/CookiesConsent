@@ -3,9 +3,9 @@ apply plugin: 'maven'
 apply plugin: 'maven-publish'
 
 ext {
-    PUBLISH_GROUP_ID = 'com.github.carlosph'
+    PUBLISH_GROUP_ID = 'com.github.7graus'
     PUBLISH_ARTIFACT_ID =  'cookiesconsent'
-    PUBLISH_VERSION = '0.9.1'
+    PUBLISH_VERSION = '1.0.0'
 }
 
 android {
