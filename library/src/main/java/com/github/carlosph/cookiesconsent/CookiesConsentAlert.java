@@ -29,13 +29,13 @@ public abstract class CookiesConsentAlert {
     protected String policyUrl;
     protected CookiesConsentListener listener;
 
-    public static boolean isDialogNeeded(Context context) {
+    public static boolean isConsentNeeded(Context context) {
         SharedPreferences prefs = context.getSharedPreferences("CookiesConsent", Context.MODE_PRIVATE);
         return prefs.getBoolean("isFirstRun", true) && EuropeanUserChecker.isEU(context);
     }
 
     public void showIfApplies() {
-        if (isDialogNeeded(activity)) {
+        if (isConsentNeeded(activity)) {
             show();
         } else {
             notifyCookiesAllowed();
