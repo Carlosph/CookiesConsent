@@ -24,7 +24,6 @@
 
 package com.github.carlosph.cookiesconsent;
 
-import android.app.Activity;
 import android.content.Context;
 import android.telephony.TelephonyManager;
 import android.util.Log;
@@ -35,13 +34,13 @@ public class EuropeanUserChecker {
 
     private static String TAG = "EU checker";
 
-    public static boolean isEU(Activity activity) {
+    public static boolean isEU(Context context) {
         boolean error = false;
 
 /* is eu sim */
 
         try {
-            final TelephonyManager tm = (TelephonyManager) activity.getSystemService(Context.TELEPHONY_SERVICE);
+            final TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
             String simCountry = tm.getSimCountryIso();
             if (simCountry != null && simCountry.length() == 2) {
                 simCountry = simCountry.toUpperCase();
@@ -58,7 +57,7 @@ public class EuropeanUserChecker {
 
 /* is eu network */
         try {
-            final TelephonyManager tm = (TelephonyManager) activity.getSystemService(Context.TELEPHONY_SERVICE);
+            final TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
             if (tm.getPhoneType() != TelephonyManager.PHONE_TYPE_CDMA && tm.getPhoneType() != TelephonyManager.PHONE_TYPE_NONE) {
                 String networkCountry = tm.getNetworkCountryIso();
                 if (networkCountry != null && networkCountry.length() == 2) {

@@ -35,12 +35,15 @@ public class CookiesConsentOverlay extends CookiesConsentAlert {
         return this;
     }
 
-    public void showIfApplies() {
-        if (isDialogNeeded()) {
-            ViewGroup rootView = getRootView();
-            if (rootView != null)
-                inflateOverlayView(rootView);
-        }
+    public CookiesConsentOverlay setListener(CookiesConsentListener listener) {
+        this.listener = listener;
+        return this;
+    }
+
+    protected void show() {
+        ViewGroup rootView = getRootView();
+        if (rootView != null)
+            inflateOverlayView(rootView);
     }
 
     private ViewGroup getRootView() {
