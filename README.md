@@ -8,27 +8,56 @@ Android library to inform of the use of cookies to EU users. The alert can be sh
 **Overlay**
 ![Screenshot of the overlay](screenshot_overlay.png)
 
-## Setup
+## Gradle
 
-Just add the dependency to your *gradle.build*
+Add the next dependency to your *gradle.build*
 ```groovy
-compile 'com.github.carlosph:cookiesconsent:0.9.1'
+compile 'com.github.carlosph:cookiesconsent:0.9.3'
 ```
 
 ## Usage
 
-Simply create a new ```CookiesConsetDialog``` or ```CookiesConsetOverlay``` and call its method ```showIfApplies()```.
+On the **onCreate** method of your **MainActivity**, create a new ```CookiesConsetDialog``` or ```CookiesConsetOverlay``` and call the method ```showIfApplies()```.
 
 To add a link to your privacy policy use the method ```setPolicyUrl(String policyUrl)```.
 
-You only need to add one line to the **onCreate** method of your **MainActivity** to show the dialog or overlay to EU users when they open the app for the first time.
+If you need to run some code only when the user has given the consent (i.e. ads or analytics code), you can set a ```CookiesConsentListener```, and the code on its ```onCookiesAllowed``` method will be executed only when the user is not from the EU or he has already being notified about the use of cookies.
+
+Additionally you can use the method ```CookiesConsentAlert.isConsentNeeded()```  anywhere in your code to know if the user has yet to give consent about the use of cookies.
+
+#Example
+
+To show the dialog or the overlay to EU users when they open the app for the first time just add the following code:
+
+**Dialog**
 ```java
-new CookiesConsentDialog(this).setPolicyUrl("https://github.com/Carlosph/CookiesConsent").showIfApplies();
+new CookiesConsentDialog(this)
+	.setPolicyUrl("https://github.com/Carlosph/CookiesConsent")
+	.showIfApplies();
 ```
 
+**Overlay**
 ```java
-new CookiesConsentOverlay(this).setPolicyUrl("https://github.com/Carlosph/CookiesConsent").showIfApplies();
+new CookiesConsentOverlay(this)
+	.setPolicyUrl("https://github.com/Carlosph/CookiesConsent")
+	.showIfApplies();
 ```
+
+**With listener**
+If you want to run some code only when users are not from EU or when they have already given consent to the use of cookies, you can use a listener. The code would be something like this:
+```
+new CookiesConsentOverlay(this)
+    .setPolicyUrl("https://github.com/Carlosph/CookiesConsent")
+    .setListener(new CookiesConsentAlert.CookiesConsentListener() {
+        @Override
+        public void onCookiesAllowed() {
+			// Code for non EU users or users
+			// which have already given consent
+        }
+    })
+    .showIfApplies();
+```
+
 
 ## Languages
 Supported languages:
