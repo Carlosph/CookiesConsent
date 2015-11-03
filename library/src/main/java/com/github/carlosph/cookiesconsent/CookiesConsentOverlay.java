@@ -50,13 +50,14 @@ public class CookiesConsentOverlay extends CookiesConsentAlert {
 
     private View inflateOverlayView(ViewGroup parent) {
         LayoutInflater inflater = activity.getLayoutInflater();
-        final View view = inflater.inflate(R.layout.cookies_consent_overlay, parent, true);
+        View view = inflater.inflate(R.layout.cookies_consent_overlay, parent, true);
+        final View overlayView = view.findViewById(R.id.overlayLayout);
 
         View button = view.findViewById(R.id.overlayButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                view.setVisibility(View.GONE);
+                overlayView.setVisibility(View.GONE);
                 policyAccepted();
             }
         });
