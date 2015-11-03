@@ -36,32 +36,35 @@ public class CookiesConsentDialog extends CookiesConsentAlert {
         return this;
     }
 
-    public CookiesConsentDialog setPolicyUrl(String policyUrl) {
+    public CookiesConsentDialog setPolicyUrl(@NonNull String policyUrl) {
         this.policyUrl = policyUrl;
         return this;
     }
 
-    public void showIfApplies() {
-        if (isDialogNeeded()) {
-            AlertDialog dialog = new AlertDialog.Builder(activity)
-                    .setNegativeButton(R.string.exit_button_text, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            activity.finish();
-                        }
-                    })
-                    .setPositiveButton(R.string.continue_button_text, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            policyAccepted();
-                        }
-                    })
-                    .setTitle(R.string.dialog_title)
-                    .setMessage(getFormattedMessage())
-                    .setCancelable(cancelable)
-                    .show();
+    public CookiesConsentDialog setListener(CookiesConsentListener listener) {
+        this.listener = listener;
+        return this;
+    }
 
-            ((TextView) dialog.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
-        }
+    protected void show() {
+        AlertDialog dialog = new AlertDialog.Builder(activity)
+                .setNegativeButton(R.string.exit_button_text, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        activity.finish();
+                    }
+                })
+                .setPositiveButton(R.string.continue_button_text, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        policyAccepted();
+                    }
+                })
+                .setTitle(R.string.dialog_title)
+                .setMessage(getFormattedMessage())
+                .setCancelable(cancelable)
+                .show();
+
+        ((TextView) dialog.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
     }
 }
