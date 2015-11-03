@@ -48,7 +48,7 @@ new CookiesConsentOverlay(this)
 **With listener**
 
 If you want to run some code only when users are not from EU or when they have already given consent to the use of cookies, you can use a listener. The code would be something like this:
-```
+```java
 new CookiesConsentOverlay(this)
     .setPolicyUrl("https://github.com/Carlosph/CookiesConsent")
     .setListener(new CookiesConsentAlert.CookiesConsentListener() {
