@@ -3,9 +3,11 @@
 Android library to inform of the use of cookies to EU users. The alert can be shown via dialog or an overlay view..
 
 **Dialog**
+
 ![Screenshot of the dialog](screenshot.png)
 
 **Overlay**
+
 ![Screenshot of the overlay](overlay_screenshot.png)
 
 ## Gradle
