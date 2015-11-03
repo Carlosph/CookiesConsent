@@ -6,7 +6,7 @@ Android library to inform of the use of cookies to EU users. The alert can be sh
 ![Screenshot of the dialog](screenshot.png)
 
 **Overlay**
-![Screenshot of the overlay](screenshot_overlay.png)
+![Screenshot of the overlay](overlay_screenshot.png)
 
 ## Gradle
 
