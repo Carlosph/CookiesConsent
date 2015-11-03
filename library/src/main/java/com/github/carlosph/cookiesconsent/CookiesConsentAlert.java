@@ -27,15 +27,32 @@ public abstract class CookiesConsentAlert {
 
     protected Activity activity;
     protected String policyUrl;
+    protected CookiesConsentListener listener;
 
-    protected boolean isDialogNeeded() {
-        SharedPreferences prefs = activity.getSharedPreferences("CookiesConsent", Context.MODE_PRIVATE);
-        return prefs.getBoolean("isFirstRun", true) && EuropeanUserChecker.isEU(activity);
+    public static boolean isConsentNeeded(Context context) {
+        SharedPreferences prefs = context.getSharedPreferences("CookiesConsent", Context.MODE_PRIVATE);
+        return prefs.getBoolean("isFirstRun", true) && EuropeanUserChecker.isEU(context);
+    }
+
+    public void showIfApplies() {
+        if (isConsentNeeded(activity)) {
+            show();
+        } else {
+            notifyCookiesAllowed();
+        }
+    }
+
+    protected abstract void show();
+
+    protected void notifyCookiesAllowed() {
+        if (listener != null)
+            listener.onCookiesAllowed();
     }
 
     protected void policyAccepted() {
         SharedPreferences prefs = activity.getSharedPreferences("CookiesConsent", Context.MODE_PRIVATE);
         prefs.edit().putBoolean("isFirstRun", false).apply();
+        notifyCookiesAllowed();
     }
 
     protected Spanned getFormattedMessage() {
@@ -51,6 +68,7 @@ public abstract class CookiesConsentAlert {
         return message;
     }
 
-    public abstract void showIfApplies();
-
+    public interface CookiesConsentListener {
+        public void onCookiesAllowed();
+    }
 }
