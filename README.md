@@ -21,7 +21,7 @@ To add a link to your privacy policy use the method ```setPolicyUrl(String polic
 
 If you need to run some code only when the user has given the consent (i.e. ads or analytics code), you can set a ```CookiesConsentListener```, and the code on its ```onCookiesAllowed``` method will be executed only when the user is not from the EU or he has already being notified about the use of cookies.
 
-Additionally you can use the method ```CookiesConsentAlert.isConsentNeeded()```  anywhere in your code to know if the user has yet to give consent about the use of cookies.
+Additionally you can use the method ```CookiesConsentAlert.isConsentNeeded(Context context)```  anywhere in your code to know if the user has yet to give consent about the use of cookies.
 
 #Example
 
@@ -42,6 +42,7 @@ new CookiesConsentOverlay(this)
 ```
 
 **With listener**
+
 If you want to run some code only when users are not from EU or when they have already given consent to the use of cookies, you can use a listener. The code would be something like this:
 ```java
 new CookiesConsentOverlay(this)
