@@ -68,6 +68,18 @@ There are just a few strings to be translated, so if your language is not suppor
 
 You can send a pull request or just send me the strings, as you like. I will try to keep the library updated with the translations that I receive.
 
+**Strings to translate**
+
+```xml
+<resources>
+    <string name="dialog_title">This app uses cookies</string>
+    <string name="dialog_text">Using it, you consent to the use of cookies in accordance with the terms of our %1$s.</string>
+    <string name="privacy_policy">privacy policy</string>
+    <string name="exit_button_text">Exit App</string>
+    <string name="continue_button_text">Continue</string>
+</resources>
+```
+
 ## Thanks
 
 The code to detect if the user is from the European Union is from this [Stack Overflow question](http://stackoverflow.com/questions/31739347/android-eu-cookie-law), asked by [Mr.Betatester](http://stackoverflow.com/users/2235837/mr-betatester) and answered by [Ruyo](http://stackoverflow.com/users/5240952/ruyo).
