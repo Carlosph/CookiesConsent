@@ -56,16 +56,12 @@ public abstract class CookiesConsentAlert {
     }
 
     protected Spanned getFormattedMessage() {
-        Spanned message;
         Resources res = activity.getResources();
+        String policyText = res.getString(R.string.privacy_policy);
         if (policyUrl != null) {
-            String policyLink = res.getString(R.string.linked_privacy_policy, policyUrl);
-            message = Html.fromHtml(res.getString(R.string.dialog_text, policyLink));
-        } else {
-            String policyText = res.getString(R.string.privacy_policy);
-            message = Html.fromHtml(res.getString(R.string.dialog_text, policyText));
+            policyText = res.getString(R.string.html_link, policyUrl, policyText);
         }
-        return message;
+        return Html.fromHtml(res.getString(R.string.dialog_text, policyText));
     }
 
     public interface CookiesConsentListener {
