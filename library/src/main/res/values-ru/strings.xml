@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Text translations by https://github.com/StanislavZakharov
+  -->
+
+<resources>
+    <string name="dialog_title">Данное приложение использует куки</string>
+    <string name="dialog_text">Используя его, вы даете согласие на использование куки в соответствии с условиями нашей %1$s.</string>
+    <string name="privacy_policy">политики конфиденциальности</string>
+    <string name="exit_button_text">Выйти</string>
+    <string name="continue_button_text">Продолжить</string>
+</resources>
