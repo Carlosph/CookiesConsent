@@ -10,7 +10,7 @@ Android library to inform EU users of the use of cookies. The alert can be shown
 
 Add the next dependency to your *gradle.build*
 ```groovy
-compile 'com.github.carlosph:cookiesconsent:0.9.4'
+compile 'com.github.carlosph:cookiesconsent:0.9.5'
 ```
 
 ## Usage
@@ -63,6 +63,7 @@ Supported languages:
 * English
 * Spanish
 * French
+* Russian
  
 There are just a few strings to be translated, so if your language is not supported, please help us by sending the translation.
 
